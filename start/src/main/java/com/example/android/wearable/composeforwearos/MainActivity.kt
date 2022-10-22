@@ -25,10 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.wear.compose.material.Scaffold
-import androidx.wear.compose.material.ScalingLazyColumn
-import androidx.wear.compose.material.TimeText
-import androidx.wear.compose.material.rememberScalingLazyListState
+import androidx.wear.compose.material.*
 import com.example.android.wearable.composeforwearos.theme.WearAppTheme
 
 /**
@@ -58,7 +55,6 @@ class MainActivity : ComponentActivity() {
 fun WearApp() {
     WearAppTheme {
         val listState = rememberScalingLazyListState()
-
         /* *************************** Part 4: Wear OS Scaffold *************************** */
         Scaffold(
             timeText = {
@@ -66,7 +62,11 @@ fun WearApp() {
                     TimeText()
                 }
             },
-            vignette = { },
+            vignette = {
+                // スクロール可能なスクリーンのみビネットを表示します。このコードラボには1つの画面しかありません。
+                // スクロール可能なので表示します。
+                Vignette(vignettePosition = VignettePosition.TopAndBottom)
+            },
             positionIndicator = { }
         ) {
             // Modifiers used by our Wear composables.
