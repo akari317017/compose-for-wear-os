@@ -156,17 +156,6 @@ fun ToggleChipExample(modifier: Modifier = Modifier) {
     )
 }
 
-// Function only used as a demo for when you start the code lab (removed as step 1).
-@Composable
-fun StartOnlyTextComposables() {
-//    Text(
-//        modifier = Modifier.fillMaxSize(),
-//        textAlign = TextAlign.Center,
-//        color = MaterialTheme.colors.primary,
-//        text = stringResource(R.string.hello_world_starter)
-//    )
-}
-
 /* Previews of Composables. */
 // Note: Preview in Android Studio doesn't support the round view yet (coming soon).
 
@@ -180,12 +169,6 @@ fun StartOnlyTextComposables() {
     backgroundColor = WEAR_PREVIEW_BACKGROUND_COLOR_BLACK,
     showBackground = WEAR_PREVIEW_SHOW_BACKGROUND
 )
-@Composable
-fun StartOnlyTextComposablesPreview() {
-    WearAppTheme {
-        StartOnlyTextComposables()
-    }
-}
 
 // Button Preview
 @Preview(
