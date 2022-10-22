@@ -67,7 +67,11 @@ fun WearApp() {
                 // スクロール可能なので表示します。
                 Vignette(vignettePosition = VignettePosition.TopAndBottom)
             },
-            positionIndicator = { }
+            positionIndicator = {
+                PositionIndicator(
+                    scalingLazyListState = listState
+                )
+            }
         ) {
             // Modifiers used by our Wear composables.
             val contentModifier = Modifier
