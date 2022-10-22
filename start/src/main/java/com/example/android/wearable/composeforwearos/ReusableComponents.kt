@@ -106,13 +106,29 @@ fun CardExample(
     }
 }
 
-// TODO: Create a Chip Composable
 @Composable
 fun ChipExample(
     modifier: Modifier = Modifier,
     iconModifier: Modifier = Modifier
 ) {
-
+    Chip(
+        modifier = modifier,
+        onClick = { /*todo*/ },
+        label = {
+            Text(
+                text = "5 minute eat a meal",
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+        },
+        icon = {
+            Icon(
+                imageVector = Icons.Rounded.RiceBowl,
+                contentDescription = "triggersMeditationAction",
+                modifier = iconModifier
+            )
+        },
+    )
 }
 
 // TODO: Create a ToggleChip Composable
