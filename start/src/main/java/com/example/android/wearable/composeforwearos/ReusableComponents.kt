@@ -83,13 +83,27 @@ fun TextExample(modifier: Modifier = Modifier) {
     )
 }
 
-// TODO: Create a Card (specifically, an AppCard) Composable
 @Composable
 fun CardExample(
     modifier: Modifier = Modifier,
     iconModifier: Modifier = Modifier
 ) {
-
+    AppCard(
+        modifier = modifier,
+        appImage = {
+            Icon(
+                imageVector = Icons.Rounded.Message,
+                contentDescription = "triggersOpenMessageAction",
+                modifier = iconModifier
+            )
+        },
+        appName = { Text("Messages") },
+        time = { Text("5h") },
+        title = { Text("ママ") },
+        onClick = { /*TODO*/ }
+    ) {
+        Text("金返せ")
+    }
 }
 
 // TODO: Create a Chip Composable
