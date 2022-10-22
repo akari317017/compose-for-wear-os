@@ -131,21 +131,40 @@ fun ChipExample(
     )
 }
 
-// TODO: Create a ToggleChip Composable
 @Composable
 fun ToggleChipExample(modifier: Modifier = Modifier) {
-
+    var checked by remember { mutableStateOf(true) }
+    ToggleChip(
+        modifier = modifier,
+        checked = checked,
+        toggleControl = {
+            Icon(
+                imageVector = ToggleChipDefaults.switchIcon(checked = checked),
+                contentDescription = if (checked) "On" else "Off"
+            )
+        },
+        onCheckedChange = {
+            checked = it
+        },
+        label = {
+            Text(
+                text = "Sound",
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+        }
+    )
 }
 
 // Function only used as a demo for when you start the code lab (removed as step 1).
 @Composable
 fun StartOnlyTextComposables() {
-    Text(
-        modifier = Modifier.fillMaxSize(),
-        textAlign = TextAlign.Center,
-        color = MaterialTheme.colors.primary,
-        text = stringResource(R.string.hello_world_starter)
-    )
+//    Text(
+//        modifier = Modifier.fillMaxSize(),
+//        textAlign = TextAlign.Center,
+//        color = MaterialTheme.colors.primary,
+//        text = stringResource(R.string.hello_world_starter)
+//    )
 }
 
 /* Previews of Composables. */
